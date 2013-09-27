@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <title>Backbone.js Comments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Backbone.js Comments: A project aimed to show the power of Backbone.js" />
+    <meta name="keywords" content="jquery, backbonejs, undescorejs, web development" />
+    <meta name="author" content="Riccardo Coppola" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" media="screen">
+  </head>
+  <body>    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Backbone.js comments</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="https://github.com/ricca509/backbonejs-comments" target="_blank">GitHub</a></li>              
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="container">      
+      <div class="row">        
+        <div class="span10">
+          <!--Body content-->
+          <h2>Your interesting post</h2>
+          <div id="content">            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ante eros, cursus nec congue sit amet, sagittis nec erat. Phasellus euismod mi a sem cursus ut facilisis tellus blandit. Maecenas cursus scelerisque dignissim. Maecenas nec mi mauris, sed adipiscing erat. Ut vitae risus at augue mattis dictum vel sit amet nisl. Pellentesque suscipit, neque vel tempor congue, odio justo rhoncus sem, in dapibus nibh massa at augue. Cras pharetra iaculis sem nec semper. Fusce mollis augue blandit velit venenatis ac egestas orci ullamcorper. Etiam eget enim orci, in dapibus orci.
+
+            Sed semper mollis ligula. Mauris ut orci tellus. In hac habitasse platea dictumst. Integer in volutpat diam. Proin interdum vehicula sodales. Aliquam pretium tincidunt iaculis. Sed consectetur tincidunt metus, in adipiscing sem laoreet sed. Sed at est dignissim odio dapibus imperdiet vel ut lectus. Vivamus sodales commodo lacus, sit amet mattis metus convallis sit amet. Duis interdum auctor facilisis.
+          </div>
+          <div id="comments">
+            <h3>Comments</h3>
+            <div id="add-comment">
+              <div class="input-append">
+                <input id="appendedInputButton" placeholder="Add a comment" type="text">
+                <button class="btn btn-success" id="btnAddComment" type="button">Add!</button>
+              </div>
+              <span class="label label-info">Hint!</span>
+              Hit the enter key to add a comment
+            </div>
+            <div id="commentsContainer" style="padding: 10px 0;">
+            </div>            
+          </div>
+          
+        </div>
+        <div class="span2">
+          <!--Sidebar content-->
+          <div id="commentsCountCountainer"></div>            
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMPLATES declaration -->
+    <!-- We keep templates inline for the sake of simplicity -->
+
+    <!-- Comment template -->
+    <script id="comment-tmpl" type="text/template">
+      <div class="media">
+        <button class="close">&times;</button>
+        <a class="pull-left" href="#">
+          <img class="media-object" src="img/user.png">
+        </a>
+        <div class="media-body">
+          <a href="#"><strong>Guest</strong></a>
+          <%= text %>          
+          <br>
+          <span class="muted comment-date" title="<%= moment(creationDate).format("dddd, MMMM Do YYYY, h:mm:ss a") %>"><%= moment(creationDate).fromNow() %></span>                
+          <button class="btn-link like"><i class="icon-thumbs-up"></i></button> <span class="badge badge-success"><%= like %></span>
+          <button class="btn-link dislike"><i class="icon-thumbs-down"></i></button> <span class="badge badge-important"><%= dislike %></span>
+        </div>
+        <hr>
+      </div>
+    </script>
+
+    <!-- Comment count template -->
+    <script id="comments-count-tmpl" type="text/template">
+      We have <h3><%= commentsCount %></h3> comment/s so far
+    </script>
+
+    <!-- Javascript at the bottom -->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/underscore-min.js"></script>    
+    <script src="js/moment.min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/backbone.comments.js"></script>
+  </body>
+</html>

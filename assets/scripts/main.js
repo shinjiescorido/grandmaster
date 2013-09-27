@@ -32,9 +32,6 @@ initialize: function() {
 		});
 	},
 
-	destroy: function(){
-
-		}
 	addDislike: function() {
 		var dislikeN = this.get('dislike') - 0;
 		dislikeN++;
